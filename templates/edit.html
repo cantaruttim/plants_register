@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/update/{{ plant.id }}" method="post">
+        <div class="mb-3">
+            <label>Plant Name</label>
+            <input type = "text" name = "plant_name" placeholder = "Plant's Name" class="form-control" value="{{plant.plant_name}}"/>
+        </div>
+        <div class="mb-3">
+            <label>Plant Scientific Name</label>
+            <input type = "text" name = "plant_scientific_name" placeholder = "Scientific Name" class="form-control" value="{{plant.plant_scientific_name}}"/>
+        </div>
+        <div class="mb-3">
+            <label>Type</label>
+            <input type = "text" name = "plant_type" placeholder = "Type" class="form-control" value="{{plant.plant_type}}"/>
+        </div>
+
+        <div class="mb-3">
+            <label>Ideal Temperature</label>
+            <input type = "text" name = "ideal_temperature" placeholder = "Temp" class="form-control" value="{{plant.ideal_temperature}}"/>
+        </div>
+
+        <div class="mb-3">
+            <label>Ideal Umidity</label>
+            <input type = "text" name = "ideal_umidity" placeholder = "Umid." class="form-control" value="{{plant.ideal_umidity}}"/>
+        </div>
+        <input type = "submit" value = "Update" class="btn btn-primary mb-3"/>  
+     </form> 
+{% endblock content %}

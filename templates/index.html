@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <a href="addnew/" class="btn btn-primary">Add New</a>
+        <br \>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Plant's Name</th>
+                    <th>Scientific Name</th>
+                    <th>Type</th>
+                    <th>Temp</th>
+                    <th>Umid</th>
+                    <th width="150">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rs in plants %}
+                    <tr>
+                        <td>{{ rs.id }}</td>
+                        <td>{{ rs.plant_name }}</td>
+                        <td>{{ rs.plant_scientific_name }}</td>
+                        <td>{{ rs.plant_type }}</td>
+                        <td>{{ rs.ideal_temperature }}</td>
+                        <td>{{ rs.ideal_umidity }}</td>
+                        <td>
+                                <a href="edit/{{ rs.id }}" class="btn btn-success">Edit</a> | <a href="delete/{{ rs.id }}" class="btn btn-danger">Del</a>
+                        </td>
+                    </tr>
+                {% endfor %}    
+            </tbody>
+        </table>
+    </div>
+</div>
+ 
+{% endblock content %}
